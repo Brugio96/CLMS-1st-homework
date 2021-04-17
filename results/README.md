@@ -74,3 +74,11 @@ Normalized confusion matrix
  [0.00268817 0.25806452 0.73924731]]
 </pre>
 The accuracy is 0.75355871886121
+
+----------------------------------------------------------------------------
+### Effect of normalizing dataset
+<pre>
+audio = audio / np.abs(audio).max()
+audio = scale.minmax_scale(audio,feature_range=(-1,1),axis=0)
+</pre>
+By applying one of the two expression above result get worse
